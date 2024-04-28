@@ -784,7 +784,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.g.base16colorspace = 256
+      vim.g.base16_colorspace = 256
       vim.cmd.colorscheme 'base16-default-dark'
 
       -- You can configure highlights by doing something like:
