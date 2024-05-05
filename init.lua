@@ -678,6 +678,34 @@ require('lazy').setup({
 
   'github/copilot.vim',
 
+  {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'canary',
+    keys = {
+      {
+        '<leader>cch',
+        function()
+          local actions = require 'CopilotChat.actions'
+          require('CopilotChat.integrations.telescope').pick(actions.help_actions())
+        end,
+        desc = '[C]opilot[C]hat - [H]elp actions',
+      },
+      {
+        '<leader>ccp',
+        function()
+          local actions = require 'CopilotChat.actions'
+          require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+        end,
+        desc = '[C]opilot[C]hat - [P]rompt actions',
+      },
+    },
+    dependencies = {
+      { 'github/copilot.vim' }, -- or github/copilot.vim
+      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+    },
+    opts = {},
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
