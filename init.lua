@@ -673,7 +673,7 @@ require('lazy').setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('oil').setup {
-        columns = { 'icon' },
+        columns = {},
         keymaps = {
           ['<C-h>'] = false,
           ['<M-h>'] = 'actions.select_split',
